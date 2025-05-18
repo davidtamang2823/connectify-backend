@@ -1,0 +1,8 @@
+docker-compose-local.yaml
+docker-compose-prod.yaml
+.dockerignore
+.prod.env
+.local.env
+prod.Dockerfile
+local.Dockerfile
+P4VgVXHG-ypiGMfB.pem
