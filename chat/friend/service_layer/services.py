@@ -71,11 +71,11 @@ class UserFriendService(AbstractUserFriendService):
         if user_friend_details:
             self.validator.validate_can_send_request(current_status=user_friend_details.get('status'))
 
-        if user_friend_details.get('status') == 'rejected':
-            self.repository.remove_friend(
-                user_id=user_friend_model.user_id, 
-                friend_id=user_friend_model.friend_id
-            )
+            if user_friend_details.get('status') == 'rejected':
+                self.repository.remove_friend(
+                    user_id=user_friend_model.user_id, 
+                    friend_id=user_friend_model.friend_id
+                )
 
         self.repository.save_friend_request(
             user_id=user_friend_model.user_id,
